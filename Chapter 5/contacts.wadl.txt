@@ -1,0 +1,91 @@
+<application xmlns="http://wadl.dev.java.net/2009/02" 
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+   xmlns:hy="http://www.herongyang.com/Service">
+   
+		<doc xml:lang="en" title="Contacts"/>
+		<resources base="localhost:3000">
+			<resource path="/contacts">
+				<method name="GET">
+					<request>
+						<param name="page" type="xsd:int" style="query"/>
+						<param name="limit" type="xsd:int" style="query"/>
+						<param name="firstname" type="xsd:string" style="query"/>
+						<param name="lastname" type="xsd:string" style="query"/>
+					</request>
+					<response status="200">
+						<representation mediaType="application/json" />
+					</response>
+					<response status="404">
+						<representation mediaType="text/html" />
+					</response>
+					<response status="500">
+						<representation mediaType="text/html" />
+					</response>
+				</method>				
+			</resource>		
+			<resource path="/contacts/{primarycontactnumber}">
+				<method name="GET">
+					<request/>					
+					<response status="200">
+						<representation mediaType="application/json" />
+					</response>
+					<response status="404">
+						<representation mediaType="text/html" />
+					</response>
+					<response status="500">
+						<representation mediaType="text/html" />
+					</response>
+				</method>
+				<method name="POST">
+					<request/>					
+					<response status="200">
+						<representation mediaType="application/json" />
+					</response>
+					<response status="404">
+						<representation mediaType="text/html" />
+					</response>
+					<response status="500">
+						<representation mediaType="text/html" />
+					</response>
+				</method>	
+				<method name="PUT">
+					<request/>					
+					<response status="200">
+						<representation mediaType="application/json" />
+					</response>
+					<response status="404">
+						<representation mediaType="text/html" />
+					</response>
+					<response status="500">
+						<representation mediaType="text/html" />
+					</response>
+				</method>
+				<method name="DELETE">
+					<request/>					
+					<response status="200">
+						<representation mediaType="application/json" />
+					</response>
+					<response status="404">
+						<representation mediaType="text/html" />
+					</response>
+					<response status="500">
+						<representation mediaType="text/html" />
+					</response>
+				</method>					
+			</resource>				
+			<resource path="/contacts/{primarycontactnumber}/image">
+				<method name="GET">
+					<request />
+					<response status="200">
+						<representation mediaType="image/jpeg" />
+					</response>
+					<response status="404">
+						<representation mediaType="text/html" />
+					</response>
+						<response status="500">
+						<representation mediaType="text/html" />
+					</response>						
+				</method>
+			</resource>		
+   </resources>
+</application>
